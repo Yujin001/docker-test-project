@@ -1,0 +1,27 @@
+{
+  "name": "docker-test-project",
+  "version": "1.0.0",
+  "description": "A simple Node.js project for testing Docker",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "node test/api-test.js",
+    "test:api": "node test/api-test.js"
+  },
+  "keywords": ["docker", "nodejs", "testing"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

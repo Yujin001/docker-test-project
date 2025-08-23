@@ -1,0 +1,25 @@
+# syntax=docker/dockerfile:1
+
+ARG NODE_VERSION=24.6.0
+
+FROM node:${NODE_VERSION}-alpine
+
+# Use development node environment
+ENV NODE_ENV development
+
+WORKDIR /usr/src/app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Expose the port that the application listens on
+EXPOSE 9000
+
+# Run the application with nodemon for development
+CMD ["npm", "run", "dev"]
