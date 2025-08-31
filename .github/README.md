@@ -10,7 +10,7 @@ The `ci-cd.yml` workflow includes the following jobs:
 - Runs on every push and pull request
 - Sets up Node.js 18 environment
 - Installs dependencies with `npm ci`
-- Runs tests against a PostgreSQL service
+- Runs unit tests (no external dependencies required)
 - Includes placeholder for linting (ESLint can be added later)
 
 ### 2. Docker Build (`docker-build`)
@@ -85,11 +85,12 @@ Replace the placeholder deployment steps with your actual deployment logic:
 - **Custom**: Add your deployment scripts or API calls
 
 ### Adding More Tests
-The workflow includes a PostgreSQL service for database tests. You can:
+The workflow runs unit tests by default. For integration tests that require a running server:
 
-1. Add more test scripts to package.json
-2. Update the test step to run multiple test commands
-3. Add coverage reporting with tools like Jest or Istanbul
+1. **Unit Tests** (CI/CD): `npm test` - Tests dependencies and basic functionality
+2. **Integration Tests** (Local): `npm run test:integration` - Tests API endpoints with running server
+3. Add more test scripts to package.json as needed
+4. Add coverage reporting with tools like Jest or Istanbul
 
 ## Workflow Triggers
 

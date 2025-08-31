@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "node test/api-test.js",
-    "test:api": "node test/api-test.js"
+    "test": "node test/unit-test.js",
+    "test:unit": "node test/unit-test.js",
+    "test:api": "node test/api-test.js",
+    "test:integration": "node test/api-test.js"
   },
   "keywords": ["docker", "nodejs", "testing"],
   "author": "",
